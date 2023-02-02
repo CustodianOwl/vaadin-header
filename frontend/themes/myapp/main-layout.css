@@ -1,0 +1,65 @@
+header {
+  background-color: #363A40;
+  color: #FFFFFF;
+}
+
+.sdo-logo{
+  padding-top: 12px;
+  padding-left: 16px;
+  height: 35px;
+}
+.current-date{
+  size: var(--lumo-size-s);
+  padding-left: 114px;
+  padding-top: 19px;
+  background: #ffffff;
+
+  color: rgba(0, 0, 0, 0.13);
+}
+
+.date-time-field::part(label){
+  background-color: magenta;
+  color: maroon;
+}
+
+
+.vaadin-field-container{
+  background: #2b908f;
+}
+
+H1{
+  color: #FFFFFF;
+  padding-left: 13px;
+  padding-top: 14px;
+}
+
+header nav a:any-link {
+  text-decoration: none;
+  padding: 0 var(--lumo-space-s);
+  border-radius: var(--lumo-border-radius-m);
+  outline: 0;
+  background-color: #FFFFFF1A;
+  color: #FFFFFF99;
+}
+
+header nav a:hover {
+  background-color: var(--lumo-primary-color-10pct);
+  color: var(--lumo-primary-color-50pct);
+}
+
+header nav a:active {
+  background-color: #FFFFFF;
+  color: #363A40;
+}
+
+header nav a:focus-visible {
+  box-shadow: 0 0 0 2px var(--lumo-primary-color-50pct);
+}
+
+header nav a[highlight]  {
+  color: #363A40;
+}
+
+header nav a[highlight] {
+  background-color: #FFFFFF;
+}
