@@ -124,10 +124,24 @@ public class MainLayout extends AppLayout {
 //        currentTime.setEnabled(false);
 
         TextField readinessTF = new TextField();
-        currentTime.addClassName("current-readiness");
-        currentTime.setValue(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        readinessTF.addClassName("current-readiness");
+        readinessTF.setValue(Readiness.BG_1.value);
 
-        layout.add(currentDateTf, currentTime);
+
+        Image userIcon = new Image("images/user-icon.png","user-ico");
+        userIcon.addClassName("user-icon");
+
+        Label userFullName = new Label();
+        userFullName.addClassName("user-full-name");
+        userFullName.setText("Залужний Валерій Федорович");
+
+//        Span userInfoField = new Span();
+//        userInfoField.addClassName("user-info-field");
+//        userInfoField.add(userIcon,userFullName);
+
+
+
+        layout.add(currentDateTf, currentTime,readinessTF,userIcon,userFullName);
 
         H1 splName = new H1("СПУ №1 Стартова Батарея №1");
         splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO, FontSize.MEDIUM);
