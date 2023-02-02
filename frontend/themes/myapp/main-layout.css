@@ -12,20 +12,23 @@ header {
   size: var(--lumo-size-s);
   padding-left: 114px;
   padding-top: 19px;
-  background: #ffffff;
-
-  color: rgba(0, 0, 0, 0.13);
 }
 
-.date-time-field::part(label){
-  background-color: magenta;
-  color: maroon;
+.current-time{
+  size: var(--lumo-size-xs);
+  padding-left: 36px;
+  padding-top: 19px;
 }
 
-
-.vaadin-field-container{
-  background: #2b908f;
+vaadin-text-field::part(input-field){
+  background: #FFFFFF1A;
+  color: #FFFFFF;
 }
+
+/*vaadin-text-field::part(input-field){*/
+/*  background: #FFFFFF1A;*/
+/*  color: #FFFFFF;*/
+/*}*/
 
 H1{
   color: #FFFFFF;

@@ -13,6 +13,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility.*;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -104,24 +105,25 @@ public class MainLayout extends AppLayout {
 
         TextField currentDateTf = new TextField();
         currentDateTf.addClassName("current-date");
-
-        currentDateTf.setPrefixComponent(new Span("Дата: "));
+        currentDateTf.setValue(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        Span datePrefix = new Span("Дата: ");
+        datePrefix.getStyle().set("color","white");
+        datePrefix.getStyle().set("padding-right","10px");
+        currentDateTf.setPrefixComponent(datePrefix);
 
         currentDateTf.setEnabled(false);
 
 
         TextField currentTime = new TextField();
-        addClassName("date-time-field");
+        currentTime.addClassName("current-time");
         currentTime.setValue(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        Span timePrefix= new Span("Час: ");
+        Span timePrefix= new Span("Час:");
         timePrefix.getStyle().set("color","white");
+        timePrefix.getStyle().set("padding-right","10px");
         currentTime.setPrefixComponent(timePrefix);
-        currentTime.getStyle().set("color", "white");
+//        currentTime.setEnabled(false);
 
-        Span splitter = new Span();
-        splitter.setWidth("30px");
-
-        layout.add(currentDateTf, splitter, currentTime);
+        layout.add(currentDateTf, currentTime);
 
         H1 splName = new H1("СПУ №1 Стартова Батарея №1");
         splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO, FontSize.MEDIUM);
