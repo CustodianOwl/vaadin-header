@@ -8,18 +8,21 @@ header {
   padding-left: 16px;
   height: 35px;
 }
+
 .current-date{
-  size: var(--lumo-size-s);
+  height: 32px;
+  width: 196px;
   padding-left: 114px;
   padding-top: 19px;
 }
 
 .current-time{
-  size: var(--lumo-size-xs);
+  height: 32px;
+  width: 133.33px;
   padding-left: 36px;
   padding-top: 19px;
 }
-
+/*todo set color for disabled*/
 vaadin-text-field::part(input-field){
   background: #FFFFFF1A;
   color: #FFFFFF;

@@ -105,7 +105,7 @@ public class MainLayout extends AppLayout {
 
         TextField currentDateTf = new TextField();
         currentDateTf.addClassName("current-date");
-        currentDateTf.setValue(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        currentDateTf.setValue(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy\tE")));
         Span datePrefix = new Span("Дата: ");
         datePrefix.getStyle().set("color","white");
         datePrefix.getStyle().set("padding-right","10px");
@@ -122,6 +122,10 @@ public class MainLayout extends AppLayout {
         timePrefix.getStyle().set("padding-right","10px");
         currentTime.setPrefixComponent(timePrefix);
 //        currentTime.setEnabled(false);
+
+        TextField readinessTF = new TextField();
+        currentTime.addClassName("current-readiness");
+        currentTime.setValue(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 
         layout.add(currentDateTf, currentTime);
 
@@ -158,6 +162,33 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("About", "la la-file", AboutView.class),
 
         };
+    }
+
+    enum Readiness{
+        BG_1 ("Готовність № 1"),
+        BG_2A("Готовність № 2а"),
+        BG_2B("Готовність № 2б"),
+        BG_3("Готовність № 3"),
+        NONE("Дупа");
+
+        String value;
+
+        Readiness(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return value;
+        }
     }
 
 }
