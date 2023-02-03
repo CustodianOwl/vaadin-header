@@ -45,9 +45,11 @@ public class MainLayout extends AppLayout {
             add(link);
         }
 
-        public MenuItemInfo(String menuTitle, Icon vaadinIcon, Class<? extends Component> view) {
+        public MenuItemInfo(String menuTitle, Icon vaadinIcon, Class<? extends Component> view, String cssClassName) {
             this.view = view;
             RouterLink link = new RouterLink();
+            link.addClassName(cssClassName);
+
             // Use Lumo classnames for various styling
             link.addClassNames(Display.FLEX, Gap.XSMALL, Height.MEDIUM, AlignItems.CENTER, Padding.Horizontal.SMALL,
                     TextColor.BODY);
@@ -61,6 +63,9 @@ public class MainLayout extends AppLayout {
 
             link.add(vaadinIcon, text);
             add(link);
+        }
+        public MenuItemInfo(String menuTitle, Icon vaadinIcon, Class<? extends Component> view) {
+            this(menuTitle, vaadinIcon, view, view.getSimpleName());
         }
 
         public Class<?> getView() {
@@ -166,7 +171,7 @@ public class MainLayout extends AppLayout {
     private MenuItemInfo[] createMenuItems() {
         return new MenuItemInfo[]{ //
 
-                new MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), AdjacentSystemsMainView.class),
+                new MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), AdjacentSystemsMainView.class,"adjacent-systems-main-view"),
                 new MenuItemInfo("ПДП", new Icon(VaadinIcon.ROCKET), AboutView.class),
                 new MenuItemInfo("Особовий склад", new Icon(VaadinIcon.USER_CARD), AboutView.class),
                 new MenuItemInfo("Зміна готовності", new Icon(VaadinIcon.SPLIT), AboutView.class),
