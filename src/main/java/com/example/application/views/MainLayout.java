@@ -141,8 +141,9 @@ public class MainLayout extends AppLayout {
         userFullName.addClassName("user-full-name");
         userFullName.setText("Залужний Валерій Федорович");
 
-        Image bellIcon = new Image("images/bell.png","bell");
+        Image bellIcon = new Image("images/bell.png","bel");
         bellIcon.addClassName("bell-icon");
+
 
 //        Span userInfoField = new Span();
 //        userInfoField.addClassName("user-info-field");
