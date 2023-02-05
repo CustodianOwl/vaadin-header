@@ -33,6 +33,7 @@ public class MainLayout extends AppLayout {
             this.view = view;
             RouterLink link = new RouterLink();
             // Use Lumo classnames for various styling
+          //  link.addClassNames("itemTab");
             link.addClassNames(Display.FLEX, Gap.XSMALL, Height.MEDIUM, AlignItems.CENTER, Padding.Horizontal.SMALL,
                     TextColor.BODY);
             link.setRoute(view);
@@ -52,7 +53,7 @@ public class MainLayout extends AppLayout {
 
             // Use Lumo classnames for various styling
             link.addClassNames(Display.FLEX, Gap.XSMALL, Height.MEDIUM, AlignItems.CENTER, Padding.Horizontal.SMALL,
-                    TextColor.BODY);
+            TextColor.BODY);
             link.setRoute(view);
             link.getElement().getChildCount();
 
@@ -96,7 +97,7 @@ public class MainLayout extends AppLayout {
     private Component createHeaderContent() {
         addClassName("main-header");
         Header header = new Header();
-        header.addClassNames(BoxSizing.BORDER, Display.FLEX, FlexDirection.COLUMN, Width.FULL/*, Background.CONTRAST_80*/);
+        header.addClassNames(BoxSizing.BORDER, Display.FLEX, FlexDirection.COLUMN /*, Width.FULL/*, Background.CONTRAST_80*/);
 
         Div layout = new Div();
         layout.addClassNames(Display.FLEX, AlignItems.CENTER, Padding.Horizontal.LARGE);
@@ -116,7 +117,7 @@ public class MainLayout extends AppLayout {
         datePrefix.getStyle().set("padding-right","10px");
         currentDateTf.setPrefixComponent(datePrefix);
 
-        currentDateTf.setEnabled(false);
+        currentDateTf.setReadOnly(true);
 
 
         TextField currentTime = new TextField();
@@ -126,7 +127,7 @@ public class MainLayout extends AppLayout {
         timePrefix.getStyle().set("color","white");
         timePrefix.getStyle().set("padding-right","10px");
         currentTime.setPrefixComponent(timePrefix);
-//        currentTime.setEnabled(false);
+        currentTime.setReadOnly(true);
 
         TextField readinessTF = new TextField();
         readinessTF.addClassName("current-readiness");
@@ -140,24 +141,28 @@ public class MainLayout extends AppLayout {
         userFullName.addClassName("user-full-name");
         userFullName.setText("Залужний Валерій Федорович");
 
+        Image bellIcon = new Image("images/bell.png","bell");
+        bellIcon.addClassName("bell-icon");
+
 //        Span userInfoField = new Span();
 //        userInfoField.addClassName("user-info-field");
 //        userInfoField.add(userIcon,userFullName);
 
 
 
-        layout.add(currentDateTf, currentTime,readinessTF,userIcon,userFullName);
+        layout.add(currentDateTf, currentTime,readinessTF,userIcon,userFullName,bellIcon);
 
         H1 splName = new H1("СПУ №1 Стартова Батарея №1");
         splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO, FontSize.MEDIUM);
 
 
         Nav nav = new Nav();
-        nav.addClassNames(Display.FLEX, Overflow.AUTO, Padding.Horizontal.SMALL, Padding.Vertical.XSMALL);
-
+       // nav.addClassNames(Display.FLEX, Overflow.AUTO, Padding.Horizontal.SMALL, Padding.Vertical.XSMALL);
+        nav.addClassNames("itemTabNav");
         // Wrap the links in a list; improves accessibility
         UnorderedList list = new UnorderedList();
-        list.addClassNames(Display.FLEX, Gap.SMALL, ListStyleType.NONE, Margin.NONE, Padding.NONE);
+       // list.addClassNames(Display.FLEX, Gap.SMALL, ListStyleType.NONE, Margin.NONE, Padding.NONE);
+        list.addClassNames("itemTabList");
         nav.add(list);
 
         for (MenuItemInfo menuItem : createMenuItems()) {
@@ -209,5 +214,7 @@ public class MainLayout extends AppLayout {
             return value;
         }
     }
+
+
 
 }

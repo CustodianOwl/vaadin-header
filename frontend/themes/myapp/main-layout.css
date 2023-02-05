@@ -1,7 +1,48 @@
 header {
   background-color: #363A40;
   color: #FFFFFF;
+  max-width: 1280px;
+  width: 1280px;
 }
+.itemTabNav{
+
+
+}
+
+body{
+  max-width: 1280px;
+  width: 1280px;
+}
+
+.itemTabList{
+  display: flex;
+  margin: 0px;
+  flex-grow: 1;
+}
+.itemTabList li{
+  flex-basis: 16%;
+
+}
+.itemTabList li:hover{
+  background-color: #FFFFFF;
+  color:#363A40;
+  border-radius: 5px 5px 0px 0px;
+}
+.itemTabList li:first-child{
+  color: magenta;
+}
+
+li {
+  list-style-type: none; /* Убираем маркеры */
+
+}
+ul {
+  padding-left: 0; /* Сдвигаем список влево */
+  padding-bottom: 0;
+
+}
+
+
 
 .sdo-logo{
   padding-top: 12px;
@@ -14,6 +55,7 @@ header {
   width: 196px;
   padding-left: 114px;
   padding-top: 19px;
+  color: #FFFFFF;
 }
 
 .current-time{
@@ -28,6 +70,14 @@ vaadin-text-field::part(input-field){
   background: #FFFFFF1A;
   color: #FFFFFF;
 }
+.current-date::part(input-field){
+  color: #FFFFFF;
+}
+
+.TextField[aria-disabled]{
+  color: #FFFFFF;
+}
+
 .current-readiness{
   height: 32px;
   width: 182px;
@@ -44,13 +94,21 @@ vaadin-text-field::part(input-field){
 .user-icon{
   height: 20px;
   width: 17px;
+  position: relative;
+  bottom: 3px;
+  left: 85px;
   padding-left: 28px;
   padding-top: 23px;
   padding-right: 7px;
   /*color: #ffffff;*/
 }
+
+
+
 .user-full-name{
   font-size: large;
+  position: relative;
+  left: 80px;
   padding-left: 6px;
   padding-top: 19px;
   font-size: var(--lumo-font-size-xl);
@@ -60,6 +118,17 @@ vaadin-text-field::part(input-field){
 /*  background: #FFFFFF1A;*/
 /*  color: #FFFFFF;*/
 /*}*/
+.bell-icon{
+  height: 20px;
+  width: 17px;
+  position: relative;
+  bottom: 3px;
+  left: 85px;
+  padding-left: 28px;
+  padding-top: 23px;
+  padding-right: 7px;
+  /*color: #ffffff;*/
+}
 
 H1{
   color: #FFFFFF;
@@ -77,8 +146,11 @@ header nav a:any-link {
 }
 
 header nav a:hover {
-  background-color: var(--lumo-primary-color-10pct);
-  color: var(--lumo-primary-color-50pct);
+ /* background-color: var(--lumo-primary-color-10pct);
+  color: var(--lumo-primary-color-50pct);*/
+  background-color: #FFFFFF;
+  color:#363A40;
+
 }
 
 header nav a:active {
@@ -97,3 +169,4 @@ header nav a[highlight]  {
 header nav a[highlight] {
   background-color: #FFFFFF;
 }
+
