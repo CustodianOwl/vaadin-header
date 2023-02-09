@@ -4,32 +4,39 @@ header {
   max-width: 1280px;
   width: 1280px;
 }
-.itemTabNav{
-
-
-}
-
 body{
   max-width: 1280px;
   width: 1280px;
 }
-
+.div-header{
+  display: flex;
+  align-items: center;
+  height: 51px;
+}
 .itemTabList{
   display: flex;
   margin: 0px;
-  flex-grow: 1;
   border-radius: 5px 5px 0px 0px;
+
 }
 .itemTabList li{
   flex-basis: 16%;
   border-radius: 5px 5px 0px 0px;
+  height: 38px;
 
 }
+
 .itemTabList li:hover{
-  background-color: #FFFFFF;
-  color:#363A40;
   border-radius: 5px 5px 0px 0px;
+  background-color: grey;
+  opacity: 0.8;
+  color:#363A40;
 }
+.itemTabList li:hover::after{
+  content: '';
+  opacity: 0;
+}
+
 .itemTabList li:first-child::after{
   content: '';
   width: 0px;
@@ -39,6 +46,7 @@ body{
   left: 182.86px;
   bottom: 8px;
 }
+
 .itemTabList li:nth-child(2)::after{
   content: '';
   width: 0px;
@@ -87,16 +95,11 @@ body{
 }
 li {
   list-style-type: none; /* Убираем маркеры */
-
-
 }
 ul {
   padding-left: 0; /* Сдвигаем список влево */
   padding-bottom: 0;
-
 }
-
-
 
 .sdo-logo{
   padding-top: 12px;
@@ -107,65 +110,98 @@ ul {
 .current-date{
   height: 32px;
   width: 196px;
-  padding-left: 114px;
-  padding-top: 19px;
   color: #FFFFFF;
+  position: relative;
+  top: 10px;
+  left: 75px;
+  padding:0px;
+
+}
+input{
+  text-transform: capitalize;
+}
+.current-date::part(input-field){
+  color: #FFFFFF;
+  min-height: 32px;
+  text-align: center;
+  padding-left: 10px;
+  text-transform: capitalize;
+}
+.dataPrefix{
+  color: #ffffff;
+  text-transform: capitalize;
+  padding-left: 5px;
 }
 
 .current-time{
   height: 32px;
   width: 133.33px;
-  padding-left: 36px;
-  padding-top: 19px;
+  border-radius: 4px;
+  position: relative;
+  top: 10px;
+  left: 100px;
+  padding:0px;
+}
+.current-time::part(input-field){
+  color: #FFFFFF;
+  height: 32px;
+  background-color: #FFFFFF1A;
+  padding-left: 10px;
+}
+.timePrefix{
+  color: #FFFFFF;
+  padding-left: 5px;
 }
 
 /*todo set color for disabled*/
 vaadin-text-field::part(input-field){
   background: #FFFFFF1A;
   color: #FFFFFF;
-}
-.current-date::part(input-field){
-  color: #FFFFFF;
-}
-
-.TextField[aria-disabled]{
-  color: #FFFFFF;
+  padding-left: 0;
 }
 
 .current-readiness{
   height: 32px;
-  width: 150px;
-  padding-left: 36px;
-  padding-top: 19px;
+  width: 160px;
+  position: relative;
+  top: 10px;
+  left: 125px;
+  padding:0px;
+  background-color:#00853D ;
+  border-radius: 4px;
 }
-
 .current-readiness::part(input-field){
-  background: #00853D;
   color: #FFFFFF;
+  height: 32px;
+  overflow: visible;
+  padding-left: 20px;
 }
-
 
 .user-icon{
   height: 20px;
   width: 17px;
   position: relative;
-  bottom: 3px;
-  left: 85px;
+  bottom: 2px;
+  left: 235px;
   padding-left: 28px;
   padding-top: 23px;
   padding-right: 7px;
   /*color: #ffffff;*/
 }
-
 .user-full-name{
   font-size: large;
   position: relative;
-  left: 80px;
+  left: 230px;
+  width: 350px;
   padding-left: 6px;
   padding-top: 19px;
   font-size: var(--lumo-font-size-xl);
+  background: none;
 }
-
+.user-full-name::part(input-field){
+  background: none;
+  padding-top: 5px;
+}
 /*vaadin-text-field::part(input-field){*/
 /*  background: #FFFFFF1A;*/
 /*  color: #FFFFFF;*/
@@ -175,7 +211,7 @@ vaadin-text-field::part(input-field){
   width: 32px;
   position: relative;
   top: 10px;
-  left: 75px;
+  left: 205px;
 }
 .user-full-name::after{
   content: '';
@@ -186,34 +222,26 @@ vaadin-text-field::part(input-field){
   display: inline-block;
   position: relative;
   bottom: 10px;
-  left: 28px;
+  left: 5px;
 }
-
 
 H1{
   color: #FFFFFF;
   padding-left: 13px;
-  padding-top: 14px;
+  padding-top: 1.25px;
+  padding-bottom: 1.25px;
+  font-size: 18px;
 }
 
 header nav a:any-link {
   text-decoration: none;
   padding: 0 var(--lumo-space-s);
-  border-radius: var(--lumo-border-radius-m);
+
   outline: 0;
   background-color: #FFFFFF1A;
   color: #FFFFFF99;
   border-radius: 5px 5px 0px 0px;
-}
-
-header nav a:hover {
- /* background-color: var(--lumo-primary-color-10pct);
-  color: var(--lumo-primary-color-50pct);*/
-  background-color: grey;
-  opacity: 0.8;
-  color:#363A40;
-  border-radius: 5px 5px 0 0;
-
+  height: 38px;
 }
 
 header nav a:active {
