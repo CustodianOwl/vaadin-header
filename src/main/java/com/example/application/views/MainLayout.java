@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility.*;
 
@@ -100,8 +101,7 @@ public class MainLayout extends AppLayout {
         header.addClassNames(BoxSizing.BORDER, Display.FLEX, FlexDirection.COLUMN /*, Width.FULL/*, Background.CONTRAST_80*/);
 
         Div layout = new Div();
-        layout.addClassNames(Display.FLEX, AlignItems.CENTER, Padding.Horizontal.LARGE);
-        layout.getStyle().set("padding-left", "0px");
+        layout.addClassName("div-header");
 
         //sdo image
         Image sdoLogo = new Image("images/sdo-logo-white.png", "SDO Logo");
@@ -112,20 +112,20 @@ public class MainLayout extends AppLayout {
         TextField currentDateTf = new TextField();
         currentDateTf.addClassName("current-date");
         currentDateTf.setValue(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy\tE")));
+        currentDateTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
         Span datePrefix = new Span("Дата: ");
-        datePrefix.getStyle().set("color","white");
-        datePrefix.getStyle().set("padding-right","10px");
+        datePrefix.addClassName("dataPrefix");
+      //  datePrefix.getStyle().set("color","white");
         currentDateTf.setPrefixComponent(datePrefix);
-
         currentDateTf.setReadOnly(true);
 
 
         TextField currentTime = new TextField();
         currentTime.addClassName("current-time");
         currentTime.setValue(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        currentTime.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
         Span timePrefix= new Span("Час:");
-        timePrefix.getStyle().set("color","white");
-        timePrefix.getStyle().set("padding-right","10px");
+        timePrefix.addClassName("timePrefix");
         currentTime.setPrefixComponent(timePrefix);
         currentTime.setReadOnly(true);
 
@@ -137,9 +137,9 @@ public class MainLayout extends AppLayout {
         Image userIcon = new Image("images/user-icon.png","user-ico");
         userIcon.addClassName("user-icon");
 
-        Label userFullName = new Label();
+        TextField userFullName = new TextField();
         userFullName.addClassName("user-full-name");
-        userFullName.setText("Залужний Валерій Федорович");
+        userFullName.setValue("Залужний Валерій Федорович");
 
         Image bellIcon = new Image("images/bell.png","bel");
         bellIcon.addClassName("bell-icon");
@@ -154,9 +154,9 @@ public class MainLayout extends AppLayout {
         layout.add(currentDateTf, currentTime,readinessTF,userIcon,userFullName,bellIcon);
 
         H1 splName = new H1("СПУ №1 Стартова Батарея №1");
-        splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO, FontSize.MEDIUM);
+        splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO);
 
-
+//FontSize.MEDIUM
         Nav nav = new Nav();
        // nav.addClassNames(Display.FLEX, Overflow.AUTO, Padding.Horizontal.SMALL, Padding.Vertical.XSMALL);
         nav.addClassNames("itemTabNav");
