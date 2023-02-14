@@ -9,6 +9,8 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.RouterLink;
@@ -93,6 +95,21 @@ public class MainLayout extends AppLayout {
 
     public MainLayout() {
         addToNavbar(createHeaderContent());
+
+        VerticalLayout vl = new VerticalLayout();
+        vl.setSpacing(false);
+
+        Image img = new Image("images/empty-plant.png", "placeholder plant");
+        img.setWidth("200px");
+        vl.add(img);
+
+        vl.add(new H2("This place intentionally left empty"));
+        vl.add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
+
+        vl.setSizeFull();
+        vl.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        vl.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
+        getStyle().set("text-align", "center");
     }
 
     private Component createHeaderContent() {
@@ -188,34 +205,6 @@ public class MainLayout extends AppLayout {
 
         };
     }
-
-    enum Readiness{
-        BG_1 ("Готовність № 1"),
-        BG_2A("Готовність № 2а"),
-        BG_2B("Готовність № 2б"),
-        BG_3("Готовність № 3"),
-        NONE("Дупа");
-
-        String value;
-
-        Readiness(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return value;
-        }
-    }
-
 
 
 }

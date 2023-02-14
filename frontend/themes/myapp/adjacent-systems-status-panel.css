@@ -1,0 +1,11 @@
+.adjacent-systems-status-panel{
+    border-color: #2a2a2b;
+    border-style: inset;
+    background: #C0C0C8;
+
+    height: 700px;
+    max-height: 700px;
+
+    max-width: 369px;
+    width: 369px;
+}
