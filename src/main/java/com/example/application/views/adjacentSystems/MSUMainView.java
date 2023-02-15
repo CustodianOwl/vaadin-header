@@ -132,65 +132,6 @@ public class MSUMainView extends HorizontalLayout {
         commandsCaption.addClassName("commands-caption");
         tabPanel.add(commandsCaption);
 
-//        List<CommandRecord> commandsList = Arrays.asList(
-//                new CommandRecord("Перевести в рабочее положение", "$PMSDS,1,0,0,0"),
-//                new CommandRecord("Перевести в транспортное оложение", "$PMSDS,0,1,0,0"),
-//                new CommandRecord("Включить обогрев", "$PMSDS,0,0,1,0"),
-//                new CommandRecord("Выключить обогрев", "$PMSDS,0,0,0,1")
-//        );
-//
-//        Grid<CommandRecord> commandsGrid = new Grid<>(CommandRecord.class, false);
-//
-//        Grid.Column<CommandRecord> caption = commandsGrid
-//                .addColumn(CommandRecord::getCaption).setHeader("Команда")
-//                /*.setTextAlign(ColumnTextAlign.START)*/;
-//
-//        Grid.Column<CommandRecord> sentence = commandsGrid
-//                .addColumn(CommandRecord::getSentence).setHeader("Відправити")
-//                /*.setTextAlign(ColumnTextAlign.END)*/;
-//        sentence.setVisible(false);
-//
-//        Grid.Column<CommandRecord> sendColumn = commandsGrid.addComponentColumn(commandRecord -> {
-//            String commandSentenceToSend = commandRecord.getSentence(); // TODO: 15.02.2023 add command builder
-//
-//            Button sendBt = new Button("Відправити");
-//            sendBt.addClassName("send-sentence-button");
-//            sendBt.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SMALL);
-//            sendBt.getStyle().set("background-color","#4F4F4F");
-//            sendBt.addClickListener(event -> {
-//                Dialog dialog = new Dialog();
-//
-//                dialog.setHeaderTitle(commandRecord.caption + "?");
-//                dialog.add("Ви впевнені, що бажаєете " + commandRecord.caption + "?");
-//
-//                Button confirmBt = new Button(sentence.getHeaderText(), (e) -> {
-//                    // TODO: 15.02.2023 send sentence to MSU
-//                    System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + commandSentenceToSend + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-//
-//
-//                    dialog.close();
-//                });
-//
-//                confirmBt.addThemeVariants(ButtonVariant.LUMO_PRIMARY,
-//                        ButtonVariant.LUMO_ERROR);
-//                confirmBt.getStyle().set("margin-right", "auto");
-//                dialog.getFooter().add(confirmBt);
-//
-//                Button cancelButton = new Button("Відміна", (e) -> dialog.close());
-//                cancelButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
-//                dialog.getFooter().add(cancelButton);
-//
-//                dialog.open();
-//            });
-//
-//            return sendBt;
-//        }).setHeader("Відправити");
-//
-//        commandsGrid.setMaxHeight("250px");
-//        commandsGrid.setItems(commandsList);
-//        tabPanel.add(commandsGrid);
-
-
         setupCommandsGrid(tabPanel);
 
 
