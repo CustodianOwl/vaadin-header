@@ -2,7 +2,7 @@ package com.example.application.views;
 
 
 import com.example.application.views.about.AboutView;
-import com.example.application.views.adjacentSystems.AdjacentSystemsMainView;
+import com.example.application.views.adjacentSystems.MSUMainView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.NpmPackage;
@@ -172,6 +172,7 @@ public class MainLayout extends AppLayout {
 
         H1 splName = new H1("СПУ №1 Стартова Батарея №1");
         splName.addClassNames(Margin.Vertical.SMALL, Margin.End.AUTO);
+        splName.addClassNames(TextAlignment.LEFT);
 
 //FontSize.MEDIUM
         Nav nav = new Nav();
@@ -194,7 +195,7 @@ public class MainLayout extends AppLayout {
     private MenuItemInfo[] createMenuItems() {
         return new MenuItemInfo[]{ //
 
-                new MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), AdjacentSystemsMainView.class,"adjacent-systems-main-view"),
+                new MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), MSUMainView.class,"adjacent-systems-main-view"),
                 new MenuItemInfo("ПДП", new Icon(VaadinIcon.ROCKET), AboutView.class),
                 new MenuItemInfo("Особовий склад", new Icon(VaadinIcon.USER_CARD), AboutView.class),
                 new MenuItemInfo("Зміна готовності", new Icon(VaadinIcon.SPLIT), AboutView.class),
