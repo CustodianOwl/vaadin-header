@@ -3,11 +3,14 @@ package com.example.application.views.adjacentSystems;
 import com.example.application.views.MainLayout;
 import com.example.application.views.Readiness;
 import com.example.application.views.about.AboutView;
+import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -20,7 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
-@PageTitle("Смежные системы")
+@PageTitle("Сатус систем | МСЮ")
 @Route(value = "adjacent-systems/msu", layout = MainLayout.class)
 public class MSUMainView extends HorizontalLayout {
 
@@ -132,7 +135,13 @@ public class MSUMainView extends HorizontalLayout {
         commandsCaption.addClassName("commands-caption");
         tabPanel.add(commandsCaption);
 
-        setupCommandsGrid(tabPanel);
+        setupMsuCommandsGrid(tabPanel);
+
+        Span logCaption = new Span("Журнал");
+        logCaption.addClassName("log-caption");
+        tabPanel.add(logCaption);
+
+        setupMsuLogGrid(tabPanel);
 
 
 
@@ -149,7 +158,23 @@ public class MSUMainView extends HorizontalLayout {
         return tabPanel;
     }
 
-    private void setupCommandsGrid(VerticalLayout tabPanel){
+    private void setupMsuLogGrid(VerticalLayout tabPanel) {
+        List<CommandRecord> commandsList = Arrays.asList(
+                new CommandRecord("Перевести в рабочее положение", "$PMSDS,1,0,0,0"),
+                new CommandRecord("Перевести в транспортное оложение", "$PMSDS,0,1,0,0"),
+                new CommandRecord("Включить обогрев", "$PMSDS,0,0,1,0"),
+                new CommandRecord("Выключить обогрев", "$PMSDS,0,0,0,1")
+        );
+        Grid<CommandRecord> logGrid = new Grid<>();
+        logGrid.addClassName("msu-log-grid");
+        logGrid.setMaxHeight("200px");
+
+
+
+        tabPanel.add(logGrid);
+    }
+
+    private void setupMsuCommandsGrid(VerticalLayout tabPanel){
         List<CommandRecord> commandsList = Arrays.asList(
                 new CommandRecord("Перевести в рабочее положение", "$PMSDS,1,0,0,0"),
                 new CommandRecord("Перевести в транспортное оложение", "$PMSDS,0,1,0,0"),
@@ -207,6 +232,22 @@ public class MSUMainView extends HorizontalLayout {
         commandsGrid.setMaxHeight("250px");
         commandsGrid.setItems(commandsList);
         tabPanel.add(commandsGrid);
+    }
+
+
+    private MainLayout.MenuItemInfo[] createMenuItems() {
+        return new MainLayout.MenuItemInfo[]{ //
+
+                new MainLayout.MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), MSUMainView.class,"adjacent-systems-main-view"),
+                new MainLayout.MenuItemInfo("ПДП", new Icon(VaadinIcon.ROCKET), AboutView.class),
+                new MainLayout.MenuItemInfo("Особовий склад", new Icon(VaadinIcon.USER_CARD), AboutView.class),
+                new MainLayout.MenuItemInfo("Зміна готовності", new Icon(VaadinIcon.SPLIT), AboutView.class),
+                new MainLayout.MenuItemInfo("Повідомлення", new Icon(VaadinIcon.BELL), AboutView.class),
+                new MainLayout.MenuItemInfo("Довідники", new Icon(VaadinIcon.TWIN_COL_SELECT), AboutView.class),
+
+                new MainLayout.MenuItemInfo("About", "la la-file", AboutView.class),
+
+        };
     }
 
     private Span addLabel(String text, Object o, String className) {

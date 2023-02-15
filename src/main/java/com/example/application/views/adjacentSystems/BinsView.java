@@ -1,0 +1,12 @@
+package com.example.application.views.adjacentSystems;
+
+import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
+
+@PageTitle("Сатус систем / БІНС")
+@Route(value = "adjacent-systems/bins", layout = MainLayout.class)
+public class BinsView extends HorizontalLayout {
+
+}
