@@ -3,12 +3,13 @@ package com.example.application.views.adjacentSystems;
 import com.example.application.views.MainLayout;
 import com.example.application.views.Readiness;
 import com.example.application.views.about.AboutView;
-import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Nav;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.UnorderedList;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -28,8 +29,20 @@ import java.util.List;
 public class MSUMainView extends HorizontalLayout {
 
     public MSUMainView() {
-        VerticalLayout vt1 = setUpSystemsInfo();
 
+//        Nav nav = new Nav();
+//        nav.addClassNames("adjacent-systems-nav");
+//
+//        UnorderedList list = new UnorderedList();
+//        list.addClassNames("adjacent-systems-nav-list");
+//        nav.add(list);
+//        for (MainLayout.MenuItemInfo menuItem : createMenuItems()) {
+//            list.add(menuItem);
+//        }
+//        add(nav);
+
+
+        VerticalLayout vt1 = setUpSystemsInfo();
 
 
         add(vt1, setUpMsuTab());
@@ -123,8 +136,25 @@ public class MSUMainView extends HorizontalLayout {
 
 
     private VerticalLayout setUpMsuTab() {
+
+        Nav nav = new Nav();
+        nav.addClassNames("adjacent-systems-nav");
+
+        UnorderedList list = new UnorderedList();// TODO: 15.02.2023 replace with HorizontalLayout to arrange as horizontal line
+        list.addClassNames("adjacent-systems-nav-list");
+        HorizontalLayout hz = new HorizontalLayout();
+        
+        nav.add(list);
+
+        for (MainLayout.MenuItemInfo menuItem : createMenuItems()) {
+            list.add(menuItem);
+        }
+
+
         VerticalLayout tabPanel = new VerticalLayout();
         addClassName("systems-tab-panel");
+
+        tabPanel.add(nav);
 
         Span splNameSpan = new Span("Назва СПУ");
         splNameSpan.addClassName("spl-name-out");
@@ -142,7 +172,6 @@ public class MSUMainView extends HorizontalLayout {
         tabPanel.add(logCaption);
 
         setupMsuLogGrid(tabPanel);
-
 
 
         Button navBt = new Button("navigate test");
@@ -170,11 +199,10 @@ public class MSUMainView extends HorizontalLayout {
         logGrid.setMaxHeight("200px");
 
 
-
         tabPanel.add(logGrid);
     }
 
-    private void setupMsuCommandsGrid(VerticalLayout tabPanel){
+    private void setupMsuCommandsGrid(VerticalLayout tabPanel) {
         List<CommandRecord> commandsList = Arrays.asList(
                 new CommandRecord("Перевести в рабочее положение", "$PMSDS,1,0,0,0"),
                 new CommandRecord("Перевести в транспортное оложение", "$PMSDS,0,1,0,0"),
@@ -198,10 +226,11 @@ public class MSUMainView extends HorizontalLayout {
 
             Button sendBt = new Button("Відправити");
             sendBt.addClassName("send-sentence-button");
-            sendBt.addThemeVariants(ButtonVariant.LUMO_PRIMARY,ButtonVariant.LUMO_SMALL);
-            sendBt.getStyle().set("background-color","#4F4F4F");
+            sendBt.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_SMALL);
+            sendBt.getStyle().set("background-color", "#4F4F4F");
             sendBt.addClickListener(event -> {
                 Dialog dialog = new Dialog();
+                dialog.addClassName("dialog-msu");
 
                 dialog.setHeaderTitle(commandRecord.caption + "?");
                 dialog.add("Ви впевнені, що бажаєете " + commandRecord.caption + "?");
@@ -213,6 +242,7 @@ public class MSUMainView extends HorizontalLayout {
 
                     dialog.close();
                 });
+                confirmBt.addClassName("confirm-button-msu-dialog");
 
                 confirmBt.addThemeVariants(ButtonVariant.LUMO_PRIMARY,
                         ButtonVariant.LUMO_ERROR);
@@ -221,6 +251,8 @@ public class MSUMainView extends HorizontalLayout {
 
                 Button cancelButton = new Button("Відміна", (e) -> dialog.close());
                 cancelButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+                cancelButton.addClassName("cancel-button-msu-dialog");
+
                 dialog.getFooter().add(cancelButton);
 
                 dialog.open();
@@ -236,17 +268,13 @@ public class MSUMainView extends HorizontalLayout {
 
 
     private MainLayout.MenuItemInfo[] createMenuItems() {
-        return new MainLayout.MenuItemInfo[]{ //
-
-                new MainLayout.MenuItemInfo("Сатус систем", new Icon(VaadinIcon.CARET_RIGHT), MSUMainView.class,"adjacent-systems-main-view"),
-                new MainLayout.MenuItemInfo("ПДП", new Icon(VaadinIcon.ROCKET), AboutView.class),
-                new MainLayout.MenuItemInfo("Особовий склад", new Icon(VaadinIcon.USER_CARD), AboutView.class),
-                new MainLayout.MenuItemInfo("Зміна готовності", new Icon(VaadinIcon.SPLIT), AboutView.class),
-                new MainLayout.MenuItemInfo("Повідомлення", new Icon(VaadinIcon.BELL), AboutView.class),
-                new MainLayout.MenuItemInfo("Довідники", new Icon(VaadinIcon.TWIN_COL_SELECT), AboutView.class),
-
-                new MainLayout.MenuItemInfo("About", "la la-file", AboutView.class),
-
+        return new MainLayout.MenuItemInfo[]{
+                new MainLayout.MenuItemInfo("БІНС", "", BinsView.class),
+                new MainLayout.MenuItemInfo("САЕ", "", SaeView.class),
+                new MainLayout.MenuItemInfo("СУТО", "", SutoView.class),
+                new MainLayout.MenuItemInfo("НППА", "", NppaView.class),
+                new MainLayout.MenuItemInfo("ППО","", PpoView.class),
+                new MainLayout.MenuItemInfo("МЕТЕО", "", MSUMainView.class)
         };
     }
 
