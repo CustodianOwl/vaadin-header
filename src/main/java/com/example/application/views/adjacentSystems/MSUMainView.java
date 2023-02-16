@@ -7,11 +7,10 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Nav;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.html.UnorderedList;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -42,7 +41,14 @@ public class MSUMainView extends HorizontalLayout {
 //        add(nav);
 
 
-        VerticalLayout vt1 = setUpSystemsInfo();
+        VerticalLayout vt1 = new VerticalLayout();
+        Image img = new Image("images/empty-plant.png", "placeholder plant");
+        img.addClassNames("spl_image");
+        img.setWidth("200px");
+        vt1.add(img);
+
+
+        vt1.add(setUpSystemsInfo());
 
 
         add(vt1, setUpMsuTab());
@@ -143,7 +149,7 @@ public class MSUMainView extends HorizontalLayout {
         UnorderedList list = new UnorderedList();// TODO: 15.02.2023 replace with HorizontalLayout to arrange as horizontal line
         list.addClassNames("adjacent-systems-nav-list");
         HorizontalLayout hz = new HorizontalLayout();
-        
+
         nav.add(list);
 
         for (MainLayout.MenuItemInfo menuItem : createMenuItems()) {
@@ -273,7 +279,7 @@ public class MSUMainView extends HorizontalLayout {
                 new MainLayout.MenuItemInfo("САЕ", "", SaeView.class),
                 new MainLayout.MenuItemInfo("СУТО", "", SutoView.class),
                 new MainLayout.MenuItemInfo("НППА", "", NppaView.class),
-                new MainLayout.MenuItemInfo("ППО","", PpoView.class),
+                new MainLayout.MenuItemInfo("ППО", "", PpoView.class),
                 new MainLayout.MenuItemInfo("МЕТЕО", "", MSUMainView.class)
         };
     }
