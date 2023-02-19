@@ -1,11 +1,543 @@
 .adjacent-systems-status-panel{
-    border-color: #2a2a2b;
-    border-style: inset;
-    background: #C0C0C8;
+    display: flex;
+    flex-wrap:wrap;
+    border: 1px solid #2a2a2b ;
+    background: #FFFFFF;
+    border-radius: 5px;
+    height: 900px;
 
-    height: 700px;
-    max-height: 700px;
-
+    gap: 0.5em;
     max-width: 369px;
     width: 369px;
 }
+.adjacent-systems-nav-list{
+    display: flex;
+}
+.itemTabList li:first-child::after{
+    content: '';
+    opacity: 0;
+}
+
+.spl_image{
+    height: 174px;
+    width: 369px;
+}
+
+.vehicle-id{
+    width: 150px;
+    color: #FFFFFF;
+    flex: 0 1 100%;
+    height: 60px;
+    padding-bottom: 0;
+}
+.vehicle-id::part(label){
+    align-self: center;
+    width: 55px;
+    text-align: center;
+    color: #000;
+    height: 15px;
+    padding-left: 10px;
+    padding-top: 0px ;
+
+
+}
+.vehicle-id::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+    align-self: center;
+
+}
+.Rcurrent-readiness{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.Rcurrent-readiness::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.Rcurrent-readiness::part(label) {
+    padding-left: 25px;
+    align-self: center;
+    width: 100px;
+    text-align: center;
+    color: #000;
+}
+.start-date{
+
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.start-date::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.start-date::part(label) {
+    display: flex;
+    align-self: center;
+    width: 110px;
+    text-align: center;
+    color: #000;
+    padding-left: 20px;
+}
+
+.start-time{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.start-time::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.start-time::part(label) {
+    display: flex;
+    align-self: center;
+    width: 110px;
+    text-align: center;
+    color: #000;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+.plc-state{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+
+}
+.plc-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.plc-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 110px;
+    text-align: center;
+    color: #000;
+    padding-left: 20px;
+}
+
+.ppo-state{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.ppo-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.ppo-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 15px;
+}
+
+.sae-state{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.sae-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.sae-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 15px;
+}
+
+.bins-state{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.bins-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.bins-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 15px;
+}
+.suto-state{
+
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.suto-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.suto-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 10px;
+}
+
+.meteo-state{
+
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.meteo-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.meteo-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 110px;
+    text-align: center;
+    color: #000;
+    padding-left: 15px;
+}
+
+.nppa-state{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.nppa-state::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+.nppa-state::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 10px;
+}
+.missile_h4_1{
+    align-self: center;
+    flex: 0 1 35%;
+    margin: 0px 0px 0px -5px;
+}
+.missile_h4_2{
+    align-self: center;
+    flex: 0 1 50%;
+    margin: 0px 0px 0px 5px;
+}
+
+
+.missile-state-1{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 80px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+.missile-state-1::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 80px;
+}
+.missile-state-1::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 10px;
+}
+.missile_1{
+    margin: 0px 0px 0px 15px;
+}
+
+.missile-state-2{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 80px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+
+}
+.missile-state-2::part(input-field){
+    height: 32px;
+    width: 80px;
+    color: #363A40;
+    background: #C9BCBC;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.missile-state-2::part(label) {
+    display: flex;
+    align-self: center;
+    width: 50px;
+    text-align: center;
+    color: #000;
+    padding-left: 10px;
+}
+.missile_2{
+    margin: 0px 0px 0px 15px;
+}
+
+
+.missile-info-1{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.missile-info-1::part(input-field) {
+    background-color: #006AF5;
+    height: 32px;
+    width: 160px;
+}
+
+.missile-info-2{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.missile-info-2::part(input-field) {
+    background-color: #006AF5;
+    height: 32px;
+    width: 160px;
+}
+
+.rocket_image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 15px;
+    left: 40px;
+}
+
+.rocket_grey_image{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 15px;
+    left: 100px;
+}
+
+
+.missile-present-1{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.missile-present-1::part(input-field){
+    background-color: #00853D;
+    height: 32px;
+    width: 160px;
+}
+
+.missile-present-2{
+    height: 50px;
+    flex: 0 1 25%;
+    width: 150px;
+    color: #FFFFFF;
+    margin: 0px 0px 0px 12px;
+    padding: 0px;
+}
+.missile-present-2::part(input-field){
+    background-color: #C9BCBC;
+    height: 32px;
+    width: 160px;
+    color: #363A40;
+}
+
+
+.adjacent-systems-nav-list li{
+    flex-basis: 16%;
+    border-radius: 5px 5px 0px 0px;
+    height: 30px;
+    text-decoration: none;
+    padding: 0 var(--lumo-space-s);
+    color: white;
+    outline: 0;
+    background-color: #FFFFFF1A;
+    margin: 5px 0 0 0;
+    border-radius: 5px 5px 0px 0px;
+    height: 30px;
+    text-align: center;
+
+}
+
+.adjacent-systems-nav-list li:hover{
+    border-radius: 5px 5px 0px 0px;
+    background-color: grey;
+    opacity: 0.8;
+    color:#363A40;
+    height: 30px;
+    margin: 5px 0 0 0;
+
+}
+.iadjacent-systems-nav-list li:hover::after{
+    content: '';
+    opacity: 0;
+}
+
+.adjacent-systems-nav-list li:first-child::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 182.86px;
+    top: 8px;
+}
+
+.adjacent-systems-nav-list li:nth-child(2)::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 365.72px;
+    bottom: 8px;
+}
+.adjacent-systems-nav-list li:nth-child(3)::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 548.58px;
+    bottom: 8px;
+}
+.adjacent-systems-nav-list li:nth-child(4)::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 731.44px;
+    bottom: 8px;
+}
+
+.adjacent-systems-nav-list li:nth-child(5)::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 914.3px;
+    bottom: 8px;
+}
+.adjacent-systems-nav-list li:nth-child(6)::after{
+    content: '';
+    width: 0px;
+    height: 15px;
+    border: 1px solid #363A40;
+    position: absolute;
+    left: 1097.16px;
+    bottom: 8px;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+
+}
+ul {
+    padding-left: 0; /* Сдвигаем список влево */
+    padding-bottom: 0;
+
+}
+
+
+.adjacent-systems-nav nav a:active {
+    background-color: #FFFFFF;
+    color: #363A40;
+}
+
+.adjacent-systems-nav nav a:focus-visible {
+    box-shadow: 0 0 0 2px var(--lumo-primary-color-50pct);
+}
+
+.adjacent-systems-nav nav a[highlight]  {
+    color: #363A40;
+}
+
+.adjacent-systems-nav nav a[highlight] {
+    background-color: #FFFFFF;
+}
+.adjacent-systems-nav-list{
+    display: flex;
+    margin: 5px 0 0 0 ;
+    border-radius: 5px 5px 0px 0px;
+    color: #FFFFFF;
+    height: 30px ;
+
+}
+.adjacent-systems-nav{
+    width: 880px;
+    background-color: #363A40;
+    color: #FFFFFF;
+    height: 40px;
+    text-align: center;
+}
+
