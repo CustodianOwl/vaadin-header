@@ -146,46 +146,46 @@ public class MSUMainView extends HorizontalLayout {
 
 
 
-        H4 missile_1 = new H4("Ракета №1");
-        missile_1.addClassName("missile_h4_1");
+        H4 missileLeft = new H4("Ракета №1");
+        missileLeft.addClassName("missile-h4-left");
 
 
-        TextField missile_1StatusTf = new TextField();
-        missile_1StatusTf.addClassName("missile-state-1");
-        missile_1StatusTf.setReadOnly(true);
-        missile_1StatusTf.setValue("3124DF");   // TODO need to add ID from system for this field
-        missile_1StatusTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missileLeftStatusTf = new TextField();
+        missileLeftStatusTf.addClassName("missile-state-left");
+        missileLeftStatusTf.setReadOnly(true);
+        missileLeftStatusTf.setValue("3124DF");   // TODO need to add ID from system for this field
+        missileLeftStatusTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
 
-        FormLayout missile_form_1 = new FormLayout();
-        missile_form_1.addClassName("missile_1");
-        missile_form_1.addFormItem(missile_1StatusTf, "ID");
+        FormLayout missileFormLeft = new FormLayout();
+        missileFormLeft.addClassName("missile-left");
+        missileFormLeft.addFormItem(missileLeftStatusTf, "ID");
 
-        H4 missile_2 = new H4("Ракета №2");
-        missile_2.addClassName("missile_h4_2");
+        H4 missileRight = new H4("Ракета №2");
+        missileRight.addClassName("missile-h4-right");
 
 
-        TextField missile_2StatusTf = new TextField();
-        missile_2StatusTf.addClassName("missile-state-2");
-        missile_2StatusTf.setReadOnly(true);
-        missile_2StatusTf.setValue("123DS");   // TODO need to add ID from system for this field
-        missile_2StatusTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missileRightStatusTf = new TextField();
+        missileRightStatusTf.addClassName("missile-state-right");
+        missileRightStatusTf.setReadOnly(true);
+        missileRightStatusTf.setValue("123DS");   // TODO need to add ID from system for this field
+        missileRightStatusTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
-        FormLayout missile_form_2 = new FormLayout();
-        missile_form_2.addClassName("missile_2");
-        missile_form_2.addFormItem(missile_2StatusTf, "ID");
+        FormLayout missileFormRight = new FormLayout();
+        missileFormRight.addClassName("missile-right");
+        missileFormRight.addFormItem(missileRightStatusTf, "ID");
 
-        TextField missile_info_1 = new TextField();
-        missile_info_1.addClassName("missile-info-1");
-        missile_info_1.setReadOnly(true);
-        missile_info_1.setValue("Інформація");
-        missile_info_1.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missileInfoLeft = new TextField();
+        missileInfoLeft.addClassName("missile-info-left");
+        missileInfoLeft.setReadOnly(true);
+        missileInfoLeft.setValue("Інформація");
+        missileInfoLeft.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
-        TextField missile_info_2 = new TextField();
-        missile_info_2.addClassName("missile-info-2");
-        missile_info_2.setReadOnly(true);
-        missile_info_2.setValue("Інформація");
-        missile_info_2.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missileInfoRight = new TextField();
+        missileInfoRight.addClassName("missile-info-right");
+        missileInfoRight.setReadOnly(true);
+        missileInfoRight.setValue("Інформація");
+        missileInfoRight.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
         Image img_r = new Image("images/rocket.png", "placeholder rocket");
         img_r.addClassNames("rocket_image");
@@ -194,22 +194,22 @@ public class MSUMainView extends HorizontalLayout {
         img_rg.addClassNames("rocket_grey_image");
 
 
-        TextField missile_present_1 = new TextField();
-        missile_present_1.addClassName("missile-present-1");
-        missile_present_1.setReadOnly(true);
-        missile_present_1.setValue("Заряджена");
-        missile_present_1.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missilePresentLeft = new TextField();
+        missilePresentLeft.addClassName("missile-present-left");
+        missilePresentLeft.setReadOnly(true);
+        missilePresentLeft.setValue("Заряджена");
+        missilePresentLeft.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
-        TextField missile_present_2 = new TextField();
-        missile_present_2.addClassName("missile-present-2");
-        missile_present_2.setReadOnly(true);
-        missile_present_2.setValue("Відсутня");
-        missile_present_2.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
+        TextField missilePresentRight = new TextField();
+        missilePresentRight.addClassName("missile-present-right");
+        missilePresentRight.setReadOnly(true);
+        missilePresentRight.setValue("Відсутня");
+        missilePresentRight.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
         statusPanel.add(idTF,readinessTF, startDateTf, startTimeTf, plcStatusTf, ppoStatusTf, saeStatusTf,binsStatusTf,
-        sutoStatusTf, meteoStatusTf, nppaStatusTf,missile_1, missile_2, missile_form_1, missile_1StatusTf,
-        missile_form_2, missile_2StatusTf, missile_info_1, missile_info_2, img_r, img_rg, missile_present_1,
-        missile_present_2);
+        sutoStatusTf, meteoStatusTf, nppaStatusTf,missileLeft, missileLeft, missileRight, missileFormLeft, missileLeftStatusTf,
+        missileFormRight, missileRightStatusTf, missileInfoLeft, missileInfoRight, img_r, img_rg, missilePresentLeft,
+        missilePresentRight);
 
 
 

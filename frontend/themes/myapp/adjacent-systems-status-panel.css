@@ -268,19 +268,19 @@
     color: #000;
     padding-left: 10px;
 }
-.missile_h4_1{
+.missile-h4-left{
     align-self: center;
     flex: 0 1 35%;
     margin: 0px 0px 0px -5px;
 }
-.missile_h4_2{
+.missile-h4-right{
     align-self: center;
     flex: 0 1 50%;
     margin: 0px 0px 0px 5px;
 }
 
 
-.missile-state-1{
+.missile-state-left{
     height: 50px;
     flex: 0 1 25%;
     width: 80px;
@@ -288,12 +288,12 @@
     margin: 0px 0px 0px 0px;
     padding: 0px;
 }
-.missile-state-1::part(input-field){
+.missile-state-left::part(input-field){
     background-color: #00853D;
     height: 32px;
     width: 80px;
 }
-.missile-state-1::part(label) {
+.missile-state-left::part(label) {
     display: flex;
     align-self: center;
     width: 50px;
@@ -301,11 +301,11 @@
     color: #000;
     padding-left: 10px;
 }
-.missile_1{
+.missile-left{
     margin: 0px 0px 0px 15px;
 }
 
-.missile-state-2{
+.missile-state-right{
     height: 50px;
     flex: 0 1 25%;
     width: 80px;
@@ -314,7 +314,7 @@
     padding: 0px;
 
 }
-.missile-state-2::part(input-field){
+.missile-state-right::part(input-field){
     height: 32px;
     width: 80px;
     color: #363A40;
@@ -324,7 +324,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
-.missile-state-2::part(label) {
+.missile-state-right::part(label) {
     display: flex;
     align-self: center;
     width: 50px;
@@ -332,12 +332,12 @@
     color: #000;
     padding-left: 10px;
 }
-.missile_2{
+.missile-right{
     margin: 0px 0px 0px 15px;
 }
 
 
-.missile-info-1{
+.missile-info-left{
     height: 50px;
     flex: 0 1 25%;
     width: 150px;
@@ -345,13 +345,13 @@
     margin: 0px 0px 0px 12px;
     padding: 0px;
 }
-.missile-info-1::part(input-field) {
+.missile-info-left::part(input-field) {
     background-color: #006AF5;
     height: 32px;
     width: 160px;
 }
 
-.missile-info-2{
+.missile-info-right{
     height: 50px;
     flex: 0 1 25%;
     width: 150px;
@@ -359,7 +359,7 @@
     margin: 0px 0px 0px 12px;
     padding: 0px;
 }
-.missile-info-2::part(input-field) {
+.missile-info-right::part(input-field) {
     background-color: #006AF5;
     height: 32px;
     width: 160px;
@@ -382,7 +382,7 @@
 }
 
 
-.missile-present-1{
+.missile-present-left{
     height: 50px;
     flex: 0 1 25%;
     width: 150px;
@@ -390,13 +390,13 @@
     margin: 0px 0px 0px 12px;
     padding: 0px;
 }
-.missile-present-1::part(input-field){
+.missile-present-left::part(input-field){
     background-color: #00853D;
     height: 32px;
     width: 160px;
 }
 
-.missile-present-2{
+.missile-present-right{
     height: 50px;
     flex: 0 1 25%;
     width: 150px;
@@ -404,7 +404,7 @@
     margin: 0px 0px 0px 12px;
     padding: 0px;
 }
-.missile-present-2::part(input-field){
+.missile-present-right::part(input-field){
     background-color: #C9BCBC;
     height: 32px;
     width: 160px;
