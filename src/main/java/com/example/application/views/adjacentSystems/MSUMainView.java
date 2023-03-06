@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.charts.model.style.Color;
+import com.vaadin.flow.component.charts.model.style.Theme;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.*;
@@ -171,6 +172,7 @@ public class MSUMainView extends HorizontalLayout {
         missileRightStatusTf.setValue("123DS");   // TODO need to add ID from system for this field
         missileRightStatusTf.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
 
+
         FormLayout missileFormRight = new FormLayout();
         missileFormRight.addClassName("missile-right");
         missileFormRight.addFormItem(missileRightStatusTf, "ID");
@@ -231,6 +233,7 @@ public class MSUMainView extends HorizontalLayout {
 
         UnorderedList list = new UnorderedList();// TODO: 15.02.2023 replace with HorizontalLayout to arrange as horizontal line
         list.addClassName("adjacent-systems-nav-list");
+        list.addClassNames(LumoUtility.Display.BLOCK);
         HorizontalLayout hz = new HorizontalLayout();
         hz.add(nav);
         nav.add(list);
@@ -242,7 +245,7 @@ public class MSUMainView extends HorizontalLayout {
 
         VerticalLayout tabPanel = new VerticalLayout();
         addClassName("systems-tab-panel");
-        tabPanel.setMaxWidth("880px");
+        tabPanel.setMaxWidth("845px");
         tabPanel.add(nav);
 
         Span splNameSpan = new Span("Назва СПУ");

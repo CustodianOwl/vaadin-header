@@ -6,5 +6,13 @@
 html{
 --lumo-secondary-text-color:  #000;
 --lumo-body-text-color: rgba(255, 255, 255, 0.6);
+
+
 }
 
+
+:host([readonly])::after {
+    color: red; /* змінюємо колір тексту */
+    background-color: #f2f2f2; /* змінюємо фоновий колір */
+    border: 3px solid #ff0000;
+}

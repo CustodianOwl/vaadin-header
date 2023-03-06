@@ -17,13 +17,11 @@ body{
   display: flex;
   margin: 0px;
   border-radius: 5px 5px 0px 0px;
-
 }
 .itemTabList li{
   flex-basis: 16%;
   border-radius: 5px 5px 0px 0px;
   height: 38px;
-
 }
 
 .itemTabList li:hover{
