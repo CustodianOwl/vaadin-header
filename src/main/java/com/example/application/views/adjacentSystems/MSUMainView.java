@@ -251,9 +251,9 @@ public class MSUMainView extends HorizontalLayout {
         Span splNameSpan = new Span("Назва СПУ");
         splNameSpan.addClassName("spl-name-out");
         tabPanel.add(splNameSpan);
-        splNameSpan.setText("СПУ №1 Стартова Батарея №1");
+        splNameSpan.setText("Система метеорологічного забезпечення");
 
-        Span commandsCaption = new Span("Команди");
+        Span commandsCaption = new Span("Перелік команд");
         commandsCaption.addClassName("commands-caption");
         tabPanel.add(commandsCaption);
 
@@ -295,11 +295,13 @@ public class MSUMainView extends HorizontalLayout {
     }
 
     private void setupMsuCommandsGrid(VerticalLayout tabPanel) {
+
         List<CommandRecord> commandsList = Arrays.asList(
                 new CommandRecord("Перевести в рабочее положение", "$PMSDS,1,0,0,0"),
                 new CommandRecord("Перевести в транспортное оложение", "$PMSDS,0,1,0,0"),
                 new CommandRecord("Включить обогрев", "$PMSDS,0,0,1,0"),
                 new CommandRecord("Выключить обогрев", "$PMSDS,0,0,0,1")
+
         );
 
         Grid<CommandRecord> commandsGrid = new Grid<>(CommandRecord.class, false);
@@ -354,6 +356,7 @@ public class MSUMainView extends HorizontalLayout {
         }).setHeader("Відправити");
 
         commandsGrid.setMaxHeight("250px");
+        commandsGrid.addClassName("commands-grid");
         commandsGrid.setItems(commandsList);
         tabPanel.add(commandsGrid);
     }
